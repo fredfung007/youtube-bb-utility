@@ -56,10 +56,9 @@ def dl_and_cut(vid, data, d_set_dir):
     # Use youtube_dl to download the video
     FNULL = open(os.devnull, 'w')
     check_call(['youtube-dl', \
-      #'--no-progress', \
       '-f','best[ext=mp4]', \
-      '-o',d_set_dir+'/'+vid.yt_id+'_temp.mp4', \
-      'youtu.be/'+vid.yt_id ], \
+      '-o',d_set_dir+'/'+vid+'_temp.mp4', \
+      'youtu.be/'+vid ], \
       stdout=FNULL,stderr=subprocess.STDOUT )
 
     # Verify that the video has been downloaded. Skip otherwise
